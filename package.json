@@ -1,0 +1,43 @@
+{
+  "name": "flcrm-be",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "nodemon": "nodemon runner.js",
+    "start": "pm2 start runner.js --name be",
+    "stop": "pm2 delete be -s &> /dev/null"
+  },
+  "dependencies": {
+    "bluebird": "^3.5.0",
+    "body-parser": "^1.18.2",
+    "bunyan-singletone-facade": "WebbyLab/bunyan-singletone-facade",
+    "docopt": "^0.6.2",
+    "escape-regexp": "^0.0.1",
+    "express": "^4.16.1",
+    "handlebars": "^4.0.10",
+    "json-pointer": "^0.6.0",
+    "livr": "^2.0.0",
+    "mongoose": "^4.11.14",
+    "mongoose-timestamp": "^0.6.0",
+    "service-layer": "^1.0.1",
+    "uuid-validate": "^0.0.3"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-plugin-transform-async-to-generator": "^6.24.1",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-decorators": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.6.0",
+    "cross-env": "^5.0.5",
+    "nodemon": "^1.12.1"
+  },
+  "description": "flcrm test task",
+  "main": "app.js",
+  "repository": {
+    "type": "git"
+  }
+}

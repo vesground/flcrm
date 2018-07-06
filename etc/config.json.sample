@@ -1,0 +1,12 @@
+{
+    "mainUrl": "",
+    "appPort":  8080,
+
+    "db":{
+        "name": "flcrm-be",
+        "host": "localhost",
+        "port": 27017,
+        "user": "",
+        "password":""
+    }
+}

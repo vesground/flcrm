@@ -1,0 +1,96 @@
+swagger: '2.0'
+
+info:
+  version: "1.0.0"
+  title: flcrm be API
+
+# Describe your paths here
+host: localhost:8080
+basePath: /api/v1
+schemes:
+  - http
+
+tags:
+  - name: Posts
+
+paths:
+  /posts:
+    get:
+      tags:
+        - Posts
+      description: |
+        `Posts` list
+      responses:
+        200:
+          description: Successful response
+          schema:
+            type: object
+            properties:
+                status:
+                  $ref: '#/definitions/status'
+                data:
+                  type: array
+                  items:
+                    $ref: '#/definitions/Posts'
+                meta:
+                  $ref: '#/definitions/meta'
+
+    post:
+      tags:
+        - Posts
+      description: |
+        Create a `Post`
+      parameters:
+        -
+          in: body
+          name: posts
+          required: true
+          description: new post
+          schema:
+            type: object
+            properties:
+              data:
+                type: object
+                properties:
+                  username:
+                    type: string
+                  text:
+                    type: string
+      responses:
+        200:
+          description: Successful response
+          schema:
+            type: object
+            properties:
+                status:
+                  $ref: '#/definitions/status'
+                data:
+                  $ref: '#/definitions/Posts'
+
+definitions:
+
+  Posts:
+    type: object
+    properties:
+      id:
+        $ref: '#/definitions/id'
+      username:
+        type: string
+      text:
+        type: string
+
+  id:
+    type: string
+    format: uuid
+
+  status:
+    type: integer
+    enum:
+      - 0
+      - 1
+
+  meta:
+    type: object
+    properties:
+      totalCount:
+        type: integer
